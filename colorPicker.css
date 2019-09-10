@@ -16,3 +16,9 @@ h1{
     color: black;
     text-align: center;
 }
+#stripe{
+    background-color: white;
+    text-align: center;
+    color: black;
+    height: 30px;
+}

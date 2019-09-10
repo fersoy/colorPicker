@@ -5,6 +5,18 @@ var pickedColor = pickColor();
 var colorDisplay = document.getElementById('colorDisplay');
 colorDisplay.textContent = pickedColor;
 var messageDisplay = document.getElementById('messageDisplay');
+var resetButton = document.getElementById('reset');
+
+
+resetButton.addEventListener("click", function(){
+    colors = generateRandomColors(6);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for(var i = 0; i < colorBoxes.length; i++){
+        colorBoxes[i].style.background = colors[i];
+    }
+    h1.style.background = '#232323';
+})
 
  
 
@@ -16,6 +28,7 @@ var messageDisplay = document.getElementById('messageDisplay');
            var clickedColor = this.style.backgroundColor;
            if(clickedColor === pickedColor){
             messageDisplay.textContent = 'Correct!'
+            resetButton.textContent = 'Play Again?';
             changeColors(clickedColor);
             h1.style.background = clickedColor;
                }
